@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.drbt.ramadancalender.MainActivity"
+    android:id="@+id/topScroll">
+
+
+
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:id="@+id/appbar"
+        app:elevation="10dp">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed|snap"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/upperPart"
+                android:animateLayoutChanges="true"
+                app:layout_collapseMode="pin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="vertical"
+                    android:id="@+id/topLinearLayout">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/topInsideLinearlayout">
+
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_centerInParent="true">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="May 7, "
+                                    android:layout_centerInParent="true"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:id="@+id/currentDate"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="30dp"
+                                    android:id="@+id/currentYear"
+                                    android:text="2017"/>
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tuesday | Ramadan 11, 1454"
+                                android:textSize="18dp"
+                                android:id="@+id/weekArabicDate"
+                                android:layout_centerInParent="true"/>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@drawable/text_lines"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="30dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingBottom="1dp">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#fff"
+                app:cardElevation="15dp"
+                android:elevation="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24dp"
+                            android:layout_marginTop="25dp"
+                            android:text="Seheri time starts at 03:51 a.m."
+                            android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24dp"
+                            android:text="Iftar time starts at 06:54 p.m."
+                            android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomScroll"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="2dp"-->
+        <!--android:background="@drawable/text_lines" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lowerPart"
+            android:orientation="vertical"
+            android:background="@drawable/bg_alt">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Month Date"
+                    style="@style/dateStyle"
+                    android:textColor="#297fb8"
+                    android:id="@+id/alarmDate"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_add_black_24dp"
+                    style="@style/addAlarmBtnStyle"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/text_lines" />
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Mon"-->
+            <!--style="@style/weekTextStyle"-->
+            <!--android:layout_weight="1"/>-->
+            <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Tue"-->
+            <!--style="@style/weekTextStyle"-->
+            <!--android:layout_weight="1"/>-->
+            <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Wed"-->
+            <!--style="@style/weekTextStyle"-->
+            <!--android:layout_weight="1"/>-->
+            <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Thu"-->
+            <!--style="@style/weekTextStyle"-->
+            <!--android:layout_weight="1"/>-->
+            <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Fri"-->
+            <!--style="@style/weekTextStyle"-->
+            <!--android:layout_weight="1"/>-->
+            <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Sat"-->
+            <!--style="@style/weekTextStyle"-->
+            <!--android:layout_weight="1"/>-->
+            <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Sun"-->
+            <!--style="@style/weekTextStyle"-->
+            <!--android:layout_weight="1"/>-->
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<Button-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="35dp"-->
+            <!--android:gravity="center_vertical|center_horizontal"-->
+            <!--android:text="1"-->
+            <!--android:textColor="#fff"-->
+            <!--android:layout_weight="1"/>-->
+            <!--<Button-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="35dp"-->
+            <!--android:gravity="center_vertical|center_horizontal"-->
+            <!--android:text="1"-->
+            <!--android:textColor="#fff"-->
+            <!--android:layout_weight="1"/>-->
+            <!--<Button-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="35dp"-->
+            <!--android:gravity="center_vertical|center_horizontal"-->
+            <!--android:text="1"-->
+            <!--android:textColor="#fff"-->
+            <!--android:layout_weight="1"/>-->
+            <!--<Button-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="35dp"-->
+            <!--android:gravity="center_vertical|center_horizontal"-->
+            <!--android:text="1"-->
+            <!--android:textColor="#fff"-->
+            <!--android:layout_weight="1"/>-->
+            <!--<Button-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="35dp"-->
+            <!--android:gravity="center_vertical|center_horizontal"-->
+            <!--android:text="1"-->
+            <!--android:textColor="#fff"-->
+            <!--android:layout_weight="1"/>-->
+            <!--<Button-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="35dp"-->
+            <!--android:gravity="center_vertical|center_horizontal"-->
+            <!--android:text="1"-->
+            <!--android:textColor="#fff"-->
+            <!--android:layout_weight="1"/>-->
+            <!--<Button-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="35dp"-->
+            <!--android:gravity="center_vertical|center_horizontal"-->
+            <!--android:text="1"-->
+            <!--android:textColor="#fff"-->
+            <!--android:layout_weight="1"/>-->
+            <!--</LinearLayout>-->
+
+            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mcv_showOtherDates="none"
+                app:mcv_selectionColor="#33baa9"
+                app:mcv_arrowColor="#000"
+                app:mcv_tileHeight="35dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@drawable/text_lines"
+                android:layout_margin="30dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Location: Dhaka, BD"
+                android:textAlignment="center"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:text="You have to decrease -9 minutes time with the followings."/>
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

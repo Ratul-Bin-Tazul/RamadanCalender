@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="dateStyle">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">#297fb8</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+</resources>
