@@ -9,148 +9,6 @@
     android:id="@+id/topScroll">
 
 
-
-
-
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        android:id="@+id/appbar"
-        app:elevation="10dp">
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:layout_scrollFlags="scroll|enterAlwaysCollapsed|snap"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary">
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/upperPart"
-                android:animateLayoutChanges="true"
-                app:layout_collapseMode="pin">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:orientation="vertical"
-                    android:id="@+id/topLinearLayout">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:id="@+id/topInsideLinearlayout">
-
-
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:layout_centerInParent="true">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="May 7, "
-                                    android:layout_centerInParent="true"
-                                    android:textSize="30dp"
-                                    android:textStyle="bold"
-                                    android:id="@+id/currentDate"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textSize="30dp"
-                                    android:id="@+id/currentYear"
-                                    android:text="2017"/>
-
-                            </LinearLayout>
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Tuesday | Ramadan 11, 1454"
-                                android:textSize="18dp"
-                                android:id="@+id/weekArabicDate"
-                                android:layout_centerInParent="true"/>
-                        </RelativeLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="2dp"
-                            android:background="@drawable/text_lines"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginRight="30dp"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginBottom="15dp"/>
-
-                    </LinearLayout>
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-        </android.support.design.widget.CollapsingToolbarLayout>
-
-
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:paddingBottom="1dp">
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="#fff"
-                app:cardElevation="15dp"
-                android:elevation="15dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="24dp"
-                            android:layout_marginTop="25dp"
-                            android:text="Seheri time starts at 03:51 a.m."
-                            android:layout_centerInParent="true"/>
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="24dp"
-                            android:text="Iftar time starts at 06:54 p.m."
-                            android:layout_centerInParent="true"/>
-                    </RelativeLayout>
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-        </LinearLayout>
-    </android.support.design.widget.AppBarLayout>
-
-
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -158,17 +16,14 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
-        <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="2dp"-->
-        <!--android:background="@drawable/text_lines" />-->
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/lowerPart"
             android:orientation="vertical"
-            android:background="@drawable/bg_alt">
+            android:background="@drawable/bg_alt_alt">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -332,5 +187,198 @@
 
 
     </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:id="@+id/appbar"
+        app:elevation="10dp">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed|snap"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/upperPart"
+                android:animateLayoutChanges="true"
+                app:layout_collapseMode="pin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="900dp"
+                    android:orientation="vertical"
+                    android:id="@+id/topLinearLayout"
+                    android:paddingTop="20dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/topInsideLinearlayout">
+
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_centerInParent="true">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="May 7, "
+                                    android:layout_centerInParent="true"
+                                    android:textSize="30dp"
+                                    android:textStyle="bold"
+                                    android:id="@+id/currentDate"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="30dp"
+                                    android:id="@+id/currentYear"
+                                    android:text="2017"/>
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tuesday | Ramadan 11, 1454"
+                                android:textSize="18dp"
+                                android:id="@+id/weekArabicDate"
+                                android:layout_centerInParent="true"/>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@drawable/text_lines"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="30dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingBottom="1dp"
+            android:orientation="vertical">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#fff"
+                app:cardElevation="15dp"
+                android:elevation="15dp"
+                android:id="@+id/insideRamadan"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24dp"
+                            android:layout_marginTop="25dp"
+                            android:text="Seheri time starts at 03:51 a.m."
+                            android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24dp"
+                            android:text="Iftar time starts at 06:54 p.m."
+                            android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#fff"
+                app:cardElevation="15dp"
+                android:elevation="15dp"
+                android:id="@+id/outsideRamadan">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/offsetDayText"
+                            android:padding="10dp"
+                            android:textAlignment="center"
+                            android:textSize="20dp"
+                            android:text="How many days remaining tiill Ramadan"
+                            android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textSize="14sp"
+                            android:textColor="#fff"
+                            android:background="#2980b9"
+                            android:text="Let your friends know"
+                            android:layout_marginBottom="10dp"
+                            android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:background="@drawable/text_lines" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>

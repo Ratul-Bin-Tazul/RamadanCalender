@@ -1,5 +1,6 @@
 package com.drbt.ramadancalender;
 
+import android.graphics.Color;
 import android.graphics.Point;
 
 import android.os.Build;
@@ -7,6 +8,9 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
@@ -31,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
     NestedScrollView bottomScroll;
     LinearLayout topScroll;
     LinearLayout topLinearLayout,topInsideLinearlayout;
-    TextView alarmDate,currentDate,currentYear,weekArabicDate;
-    CardView upperCard;
+    TextView alarmDate,currentDate,currentYear,weekArabicDate,dayOffset;
+    CardView upperCard,insideRamdan,outsideRamadan;
     MaterialCalendarView materialCalendarView;
 
     Calendar calender;
@@ -50,11 +54,14 @@ public class MainActivity extends AppCompatActivity {
         //topLinearLayout = (LinearLayout) findViewById(R.id.topLinearLayout);
         //topInsideLinearlayout = (LinearLayout) findViewById(R.id.topInsideLinearlayout);
         upperCard = (CardView) findViewById(R.id.upperPart);
+        insideRamdan = (CardView) findViewById(R.id.insideRamadan);
+        outsideRamadan = (CardView) findViewById(R.id.outsideRamadan);
         materialCalendarView = (MaterialCalendarView) findViewById(R.id.calendarView);
         alarmDate = (TextView) findViewById(R.id.alarmDate);
         currentDate = (TextView) findViewById(R.id.currentDate);
         currentYear = (TextView) findViewById(R.id.currentYear);
         weekArabicDate = (TextView) findViewById(R.id.weekArabicDate);
+        dayOffset = (TextView) findViewById(R.id.offsetDayText);
 
         calender = Calendar.getInstance();
         materialCalendarView.setSelectedDate(calender);
@@ -65,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
 
         calender.get(Calendar.DAY_OF_YEAR);
 
-        alarmDate.setText(currentMonthText+" "+currentYearText);
-        currentDate.setText(currentMonthText+" "+currentDateText+",");
+        alarmDate.setText(currentMonthText+" "+currentDateText);
+        currentDate.setText(currentMonthText+" "+currentDateText+", ");
         currentYear.setText(currentYearText+"");
 
         String arabicMonth="";
-        int arabicDate=0,arabicYear=0;
+        int arabicDate=0,arabicYear=1438;
 
         if(currentMonthText.equals("May")) {
             if(currentDateText<=27) {
@@ -92,9 +99,69 @@ public class MainActivity extends AppCompatActivity {
         }
 
         int dayOfWeek = calender.get(Calendar.DAY_OF_WEEK);
-        weekArabicDate.setText(DAYS[dayOfWeek]+" | "+arabicMonth+" "+arabicDate+", "+arabicYear);
+        weekArabicDate.setText(DAYS[dayOfWeek-1]+" | "+arabicMonth+" "+arabicDate+", "+arabicYear);
+
+        int dayOfYear = calender.get(Calendar.DAY_OF_YEAR);
 
 
+
+
+
+        if(dayOfYear<148) { //Not the month of Ramadan
+            insideRamdan.setVisibility(View.GONE);
+            outsideRamadan.setVisibility(View.VISIBLE);
+
+            SpannableStringBuilder builder = new SpannableStringBuilder();
+
+            String green = (148-dayOfYear)+"";
+            SpannableString greenSpannable= new SpannableString(green);
+            greenSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#6FCA4D")), 0, green.length(), 0);
+            builder.append(greenSpannable);
+
+            String daysTill = " days till the month of";
+            SpannableString daysTillSpannable= new SpannableString(daysTill);
+            //greenSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#6FCA4D")), 0, green.length(), 0);
+            builder.append(daysTillSpannable);
+
+            String ramadan = " Ramadan ";
+            SpannableString ramadanSpannable= new SpannableString(ramadan);
+            ramadanSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#BE4338")), 0, ramadan.length(), 0);
+            builder.append(ramadanSpannable);
+
+            String s = "starts";
+            SpannableString startsSpannable= new SpannableString(s);
+            //startsSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#BE4338")), 0, s.length(), 0);
+            builder.append(startsSpannable);
+
+            dayOffset.setText(builder, TextView.BufferType.SPANNABLE);
+
+            //dayOffset.setText();
+        }
+        else if(dayOfYear>178) {
+            insideRamdan.setVisibility(View.GONE);
+            outsideRamadan.setVisibility(View.VISIBLE);
+
+            SpannableStringBuilder builder = new SpannableStringBuilder();
+
+
+            String green = (dayOfYear-178)+"";
+            SpannableString greenSpannable= new SpannableString(green);
+            greenSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#6FCA4D")), 0, green.length(), 0);
+            builder.append(greenSpannable);
+
+            String daysTill = " days passed since Ramadan.";
+            SpannableString daysTillSpannable= new SpannableString(daysTill);
+            //greenSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#6FCA4D")), 0, green.length(), 0);
+            builder.append(daysTillSpannable);
+
+            dayOffset.setText(builder, TextView.BufferType.SPANNABLE);
+
+            //dayOffset.setText(" days passed since Ramadan.");
+        }
+        else {
+            insideRamdan.setVisibility(View.VISIBLE);
+            outsideRamadan.setVisibility(View.GONE);
+        }
 
 //        int y1=0,y2=0;
 //        bottomScroll.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
